@@ -1,11 +1,13 @@
-# api documentation for  [formidable (v1.1.1)](https://github.com/felixge/node-formidable)  [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-formidable.svg)](https://travis-ci.org/npmdoc/node-npmdoc-formidable)
+# api documentation for  [formidable (v1.1.1)](https://github.com/felixge/node-formidable)  [![npm package](https://img.shields.io/npm/v/npmdoc-formidable.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-formidable) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-formidable.svg)](https://travis-ci.org/npmdoc/node-npmdoc-formidable)
 #### A node.js module for parsing form data, especially file uploads.
 
 [![NPM](https://nodei.co/npm/formidable.png?downloads=true)](https://www.npmjs.com/package/formidable)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-formidable/build/screen-capture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-formidable_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-formidable/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-formidable/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-formidable_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-formidable/build..beta..travis-ci.org/apidoc.html)
 
-![package-listing](https://npmdoc.github.io/node-npmdoc-formidable/build/screen-capture.npmPackageListing.svg)
+![npmPackageListing](https://npmdoc.github.io/node-npmdoc-formidable/build/screenCapture.npmPackageListing.svg)
+
+![npmPackageDependencyTree](https://npmdoc.github.io/node-npmdoc-formidable/build/screenCapture.npmPackageDependencyTree.svg)
 
 
 
