@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/felixge/node-formidable"
-
-    >formidable (v1.1.1)</a>
+    <a href="https://github.com/felixge/node-formidable">formidable (v1.1.1)</a>
 </h1>
 <h4>A node.js module for parsing form data, especially file uploads.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.formidable">module formidable</a><ol>
 
@@ -559,8 +552,8 @@
   this.maxFields = opts.maxFields || 1000;
   this.maxFieldsSize = opts.maxFieldsSize || 2 * 1024 * 1024;
   this.keepExtensions = opts.keepExtensions || false;
-  this.uploadDir = opts.uploadDir || (os.tmpdir &#x26;&#x26; os.tmpdir()) || os.tmpDir();
-  this.encoding = opts.encoding || &#x27;utf-8&#x27;;
+  this.uploadDir = opts.uploadDir || (os.tmpdir &amp;&amp; os.tmpdir()) || os.tmpDir();
+  this.encoding = opts.encoding || 'utf-8';
   this.headers = null;
   this.type = null;
   this.hash = opts.hash || false;
@@ -600,8 +593,8 @@
   this.maxFields = opts.maxFields || 1000;
   this.maxFieldsSize = opts.maxFieldsSize || 2 * 1024 * 1024;
   this.keepExtensions = opts.keepExtensions || false;
-  this.uploadDir = opts.uploadDir || (os.tmpdir &#x26;&#x26; os.tmpdir()) || os.tmpDir();
-  this.encoding = opts.encoding || &#x27;utf-8&#x27;;
+  this.uploadDir = opts.uploadDir || (os.tmpdir &amp;&amp; os.tmpdir()) || os.tmpDir();
+  this.encoding = opts.encoding || 'utf-8';
   this.headers = null;
   this.type = null;
   this.hash = opts.hash || false;
@@ -618,18 +611,18 @@
   return this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-var formidable = require(&#x27;formidable&#x27;),
-http = require(&#x27;http&#x27;),
-util = require(&#x27;util&#x27;);
+var formidable = require('formidable'),
+http = require('http'),
+util = require('util');
 
 http.createServer(function(req, res) {
-  if (req.url == &#x27;/upload&#x27; &#x26;&#x26; req.method.toLowerCase() == &#x27;post&#x27;) {
+  if (req.url == '/upload' &amp;&amp; req.method.toLowerCase() == 'post') {
 // parse a file upload
 var form = new formidable.<span class="apidocCodeKeywordSpan">IncomingForm</span>();
 
 form.parse(req, function(err, fields, files) {
-  res.writeHead(200, {&#x27;content-type&#x27;: &#x27;text/plain&#x27;});
-  res.write(&#x27;received upload:\n\n&#x27;);
+  res.writeHead(200, {'content-type': 'text/plain'});
+  res.write('received upload:\n\n');
   res.end(util.inspect({fields: fields, files: files}));
 });
 ...</pre></li>
@@ -660,7 +653,7 @@ form.parse(req, function(err, fields, files) {
     this[key] = properties[key];
   }
 
-  if(typeof this.hash === &#x27;string&#x27;) {
+  if(typeof this.hash === 'string') {
     this.hash = crypto.createHash(properties.hash);
   } else {
     this.hash = null;
@@ -724,8 +717,8 @@ form.parse(req, function(err, fields, files) {
   this.maxFields = opts.maxFields || 1000;
   this.maxFieldsSize = opts.maxFieldsSize || 2 * 1024 * 1024;
   this.keepExtensions = opts.keepExtensions || false;
-  this.uploadDir = opts.uploadDir || (os.tmpdir &#x26;&#x26; os.tmpdir()) || os.tmpDir();
-  this.encoding = opts.encoding || &#x27;utf-8&#x27;;
+  this.uploadDir = opts.uploadDir || (os.tmpdir &amp;&amp; os.tmpdir()) || os.tmpDir();
+  this.encoding = opts.encoding || 'utf-8';
   this.headers = null;
   this.type = null;
   this.hash = opts.hash || false;
@@ -742,18 +735,18 @@ form.parse(req, function(err, fields, files) {
   return this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-var formidable = require(&#x27;formidable&#x27;),
-http = require(&#x27;http&#x27;),
-util = require(&#x27;util&#x27;);
+var formidable = require('formidable'),
+http = require('http'),
+util = require('util');
 
 http.createServer(function(req, res) {
-  if (req.url == &#x27;/upload&#x27; &#x26;&#x26; req.method.toLowerCase() == &#x27;post&#x27;) {
+  if (req.url == '/upload' &amp;&amp; req.method.toLowerCase() == 'post') {
 // parse a file upload
 var form = new formidable.<span class="apidocCodeKeywordSpan">IncomingForm</span>();
 
 form.parse(req, function(err, fields, files) {
-  res.writeHead(200, {&#x27;content-type&#x27;: &#x27;text/plain&#x27;});
-  res.write(&#x27;received upload:\n\n&#x27;);
+  res.writeHead(200, {'content-type': 'text/plain'});
+  res.write('received upload:\n\n');
   res.end(util.inspect({fields: fields, files: files}));
 });
 ...</pre></li>
@@ -794,7 +787,7 @@ form.parse(req, function(err, fields, files) {
   }
 
   this.error = err;
-  this.emit(&#x27;error&#x27;, err);
+  this.emit('error', err);
 
   if (Array.isArray(this.openedFiles)) {
     this.openedFiles.forEach(function(file) {
@@ -810,7 +803,7 @@ this.pause = function() {
   } catch (err) {
     // the stream was destroyed
     if (!this.ended) {
-      // before it was completed, crash &#x26; burn
+      // before it was completed, crash &amp; burn
       this.<span class="apidocCodeKeywordSpan">_error</span>(err);
     }
     return false;
@@ -833,33 +826,33 @@ this.resume = function() {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_fileName = function (headerValue) {
   // matches either a quoted-string or a token (RFC 2616 section 19.5.1)
-  var m = headerValue.match(/\bfilename=(&#x22;(.*?)&#x22;|([^\(\)&#x3c;&#x3e;@,;:\\&#x22;\/\[\]\?=\{\}\s\t/]+))($|;\s)/i);
+  var m = headerValue.match(/\bfilename=("(.*?)"|([^\(\)&lt;&gt;@,;:\\"\/\[\]\?=\{\}\s\t/]+))($|;\s)/i);
   if (!m) return;
 
-  var match = m[2] || m[3] || &#x27;&#x27;;
-  var filename = match.substr(match.lastIndexOf(&#x27;\\&#x27;) + 1);
-  filename = filename.replace(/%22/g, &#x27;&#x22;&#x27;);
-  filename = filename.replace(/&#x26;#([\d]{4});/g, function(m, code) {
+  var match = m[2] || m[3] || '';
+  var filename = match.substr(match.lastIndexOf('\\') + 1);
+  filename = filename.replace(/%22/g, '"');
+  filename = filename.replace(/&amp;#([\d]{4});/g, function(m, code) {
     return String.fromCharCode(code);
   });
   return filename;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 // matches either a quoted-string or a token (RFC 2616 section 19.5.1)
-var m = headerValue.match(/\bname=(&#x22;([^&#x22;]*)&#x22;|([^\(\)&#x3c;&#x3e;@,;:\\&#x22;\/\[\]\?=\{\}\s\t/]+))/i);
-if (headerField == &#x27;content-disposition&#x27;) {
+var m = headerValue.match(/\bname=("([^"]*)"|([^\(\)&lt;&gt;@,;:\\"\/\[\]\?=\{\}\s\t/]+))/i);
+if (headerField == 'content-disposition') {
   if (m) {
-    part.name = m[2] || m[3] || &#x27;&#x27;;
+    part.name = m[2] || m[3] || '';
   }
 
   part.filename = self.<span class="apidocCodeKeywordSpan">_fileName</span>(headerValue);
-} else if (headerField == &#x27;content-type&#x27;) {
+} else if (headerField == 'content-type') {
   part.mime = headerValue;
-} else if (headerField == &#x27;content-transfer-encoding&#x27;) {
+} else if (headerField == 'content-transfer-encoding') {
   part.transferEncoding = headerValue.toLowerCase();
 }
 
-headerField = &#x27;&#x27;;
+headerField = '';
 ...</pre></li>
     </ul>
 
@@ -873,7 +866,7 @@ headerField = &#x27;&#x27;;
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_initJSONencoded = function () {
-  this.type = &#x27;json&#x27;;
+  this.type = 'json';
 
   var parser = new JSONParser(this)
     , self = this;
@@ -883,7 +876,7 @@ headerField = &#x27;&#x27;;
   }
 
   parser.onField = function(key, val) {
-    self.emit(&#x27;field&#x27;, key, val);
+    self.emit('field', key, val);
   };
 
   parser.onEnd = function() {
@@ -895,17 +888,17 @@ headerField = &#x27;&#x27;;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
     } else {
-      this._error(new Error(&#x27;bad content-type header, no multipart boundary&#x27;));
+      this._error(new Error('bad content-type header, no multipart boundary'));
     }
     return;
   }
 
-  if (this.headers[&#x27;content-type&#x27;].match(/json/i)) {
+  if (this.headers['content-type'].match(/json/i)) {
     this.<span class="apidocCodeKeywordSpan">_initJSONencoded</span>();
     return;
   }
 
-  this._error(new Error(&#x27;bad content-type header, unknown content-type: &#x27;+this.headers[&#x27;content-type&#x27;]));
+  this._error(new Error('bad content-type header, unknown content-type: '+this.headers['content-type']));
 };
 
 IncomingForm.prototype._error = function(err) {
@@ -922,7 +915,7 @@ IncomingForm.prototype._error = function(err) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_initMultipart = function (boundary) {
-  this.type = &#x27;multipart&#x27;;
+  this.type = 'multipart';
 
   var parser = new MultipartParser(),
       self = this,
@@ -940,11 +933,11 @@ IncomingForm.prototype._error = function(err) {
     part.filename = null;
     part.mime = null;
 
-    part.transferEncoding = &#x27;binary&#x27;;
-    part.transferBuffer = &#x27;&#x27;;
+    part.transferEncoding = 'binary';
+    part.transferBuffer = '';
 
-    headerField = &#x27;&#x27;;
-    headerValue = &#x27;&#x27;;
+    headerField = '';
+    headerValue = '';
   };
 
   parser.onHeaderField = function(b, start, end) {
@@ -960,40 +953,40 @@ IncomingForm.prototype._error = function(err) {
     part.headers[headerField] = headerValue;
 
     // matches either a quoted-string or a token (RFC 2616 section 19.5.1)
-    var m = headerValue.match(/\bname=(&#x22;([^&#x22;]*)&#x22;|([^\(\)&#x3c;&#x3e;@,;:\\&#x22;\/\[\]\?=\{\}\s\t/]+))/i);
-    if (headerField == &#x27;content-disposition&#x27;) {
+    var m = headerValue.match(/\bname=("([^"]*)"|([^\(\)&lt;&gt;@,;:\\"\/\[\]\?=\{\}\s\t/]+))/i);
+    if (headerField == 'content-disposition') {
       if (m) {
-        part.name = m[2] || m[3] || &#x27;&#x27;;
+        part.name = m[2] || m[3] || '';
       }
 
       part.filename = self._fileName(headerValue);
-    } else if (headerField == &#x27;content-type&#x27;) {
+    } else if (headerField == 'content-type') {
       part.mime = headerValue;
-    } else if (headerField == &#x27;content-transfer-encoding&#x27;) {
+    } else if (headerField == 'content-transfer-encoding') {
       part.transferEncoding = headerValue.toLowerCase();
     }
 
-    headerField = &#x27;&#x27;;
-    headerValue = &#x27;&#x27;;
+    headerField = '';
+    headerValue = '';
   };
 
   parser.onHeadersEnd = function() {
     switch(part.transferEncoding){
-      case &#x27;binary&#x27;:
-      case &#x27;7bit&#x27;:
-      case &#x27;8bit&#x27;:
+      case 'binary':
+      case '7bit':
+      case '8bit':
       parser.onPartData = function(b, start, end) {
-        part.emit(&#x27;data&#x27;, b.slice(start, end));
+        part.emit('data', b.slice(start, end));
       };
 
       parser.onPartEnd = function() {
-        part.emit(&#x27;end&#x27;);
+        part.emit('end');
       };
       break;
 
-      case &#x27;base64&#x27;:
+      case 'base64':
       parser.onPartData = function(b, start, end) {
-        part.transferBuffer += b.slice(start, end).toString(&#x27;ascii&#x27;);
+        part.transferBuffer += b.slice(start, end).toString('ascii');
 
 <span class="apidocCodeCommentSpan">        /*
         four bytes (chars) in base64 converts to three bytes in binary
@@ -1002,18 +995,18 @@ IncomingForm.prototype._error = function(err) {
         can be divided vy 3.
         */
 </span>        var offset = parseInt(part.transferBuffer.length / 4, 10) * 4;
-        part.emit(&#x27;data&#x27;, new Buffer(part.transferBuffer.substring(0, offset), &#x27;base64&#x27;));
+        part.emit('data', new Buffer(part.transferBuffer.substring(0, offset), 'base64'));
         part.transferBuffer = part.transferBuffer.substring(offset);
       };
 
       parser.onPartEnd = function() {
-        part.emit(&#x27;data&#x27;, new Buffer(part.transferBuffer, &#x27;base64&#x27;));
-        part.emit(&#x27;end&#x27;);
+        part.emit('data', new Buffer(part.transferBuffer, 'base64'));
+        part.emit('end');
       };
       break;
 
       default:
-      return self._error(new Error(&#x27;unknown transfer-encoding&#x27;));
+      return self._error(new Error('unknown transfer-encoding'));
     }
 
     self.onPart(part);
@@ -1032,17 +1025,17 @@ IncomingForm.prototype._error = function(err) {
   return;
 }
 
-if (this.headers[&#x27;content-type&#x27;].match(/multipart/i)) {
-  var m = this.headers[&#x27;content-type&#x27;].match(/boundary=(?:&#x22;([^&#x22;]+)&#x22;|([^;]+))/i);
+if (this.headers['content-type'].match(/multipart/i)) {
+  var m = this.headers['content-type'].match(/boundary=(?:"([^"]+)"|([^;]+))/i);
   if (m) {
     this.<span class="apidocCodeKeywordSpan">_initMultipart</span>(m[1] || m[2]);
   } else {
-    this._error(new Error(&#x27;bad content-type header, no multipart boundary&#x27;));
+    this._error(new Error('bad content-type header, no multipart boundary'));
   }
   return;
 }
 
-if (this.headers[&#x27;content-type&#x27;].match(/json/i)) {
+if (this.headers['content-type'].match(/json/i)) {
 ...</pre></li>
     </ul>
 
@@ -1056,9 +1049,9 @@ if (this.headers[&#x27;content-type&#x27;].match(/json/i)) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_initOctetStream = function () {
-  this.type = &#x27;octet-stream&#x27;;
-  var filename = this.headers[&#x27;x-file-name&#x27;];
-  var mime = this.headers[&#x27;content-type&#x27;];
+  this.type = 'octet-stream';
+  var filename = this.headers['x-file-name'];
+  var mime = this.headers['content-type'];
 
   var file = new File({
     path: this._uploadPath(filename),
@@ -1066,7 +1059,7 @@ if (this.headers[&#x27;content-type&#x27;].match(/json/i)) {
     type: mime
   });
 
-  this.emit(&#x27;fileBegin&#x27;, filename, file);
+  this.emit('fileBegin', filename, file);
   file.open();
 
   this._flushing++;
@@ -1075,10 +1068,10 @@ if (this.headers[&#x27;content-type&#x27;].match(/json/i)) {
 
   self._parser = new OctetParser();
 
-  //Keep track of writes that haven&#x27;t finished so we don&#x27;t emit the file before it&#x27;s done being written
+  //Keep track of writes that haven't finished so we don't emit the file before it's done being written
   var outstandingWrites = 0;
 
-  self._parser.on(&#x27;data&#x27;, function(buffer){
+  self._parser.on('data', function(buffer){
     self.pause();
     outstandingWrites++;
 
@@ -1087,18 +1080,18 @@ if (this.headers[&#x27;content-type&#x27;].match(/json/i)) {
       self.resume();
 
       if(self.ended){
-        self._parser.emit(&#x27;doneWritingFile&#x27;);
+        self._parser.emit('doneWritingFile');
       }
     });
   });
 
-  self._parser.on(&#x27;end&#x27;, function(){
+  self._parser.on('end', function(){
     self._flushing--;
     self.ended = true;
 
     var done = function(){
       file.end(function() {
-        self.emit(&#x27;file&#x27;, &#x27;file&#x27;, file);
+        self.emit('file', 'file', file);
         self._maybeEnd();
       });
     };
@@ -1106,23 +1099,23 @@ if (this.headers[&#x27;content-type&#x27;].match(/json/i)) {
     if(outstandingWrites === 0){
       done();
     } else {
-      self._parser.once(&#x27;doneWritingFile&#x27;, done);
+      self._parser.once('doneWritingFile', done);
     }
   });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
-if (!this.headers[&#x27;content-type&#x27;]) {
-  this._error(new Error(&#x27;bad content-type header, no content-type&#x27;));
+if (!this.headers['content-type']) {
+  this._error(new Error('bad content-type header, no content-type'));
   return;
 }
 
-if (this.headers[&#x27;content-type&#x27;].match(/octet-stream/i)) {
+if (this.headers['content-type'].match(/octet-stream/i)) {
   this.<span class="apidocCodeKeywordSpan">_initOctetStream</span>();
   return;
 }
 
-if (this.headers[&#x27;content-type&#x27;].match(/urlencoded/i)) {
+if (this.headers['content-type'].match(/urlencoded/i)) {
   this._initUrlencoded();
   return;
 }
@@ -1139,13 +1132,13 @@ if (this.headers[&#x27;content-type&#x27;].match(/urlencoded/i)) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_initUrlencoded = function () {
-  this.type = &#x27;urlencoded&#x27;;
+  this.type = 'urlencoded';
 
   var parser = new QuerystringParser(this.maxFields)
     , self = this;
 
   parser.onField = function(key, val) {
-    self.emit(&#x27;field&#x27;, key, val);
+    self.emit('field', key, val);
   };
 
   parser.onEnd = function() {
@@ -1157,18 +1150,18 @@ if (this.headers[&#x27;content-type&#x27;].match(/urlencoded/i)) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
-if (this.headers[&#x27;content-type&#x27;].match(/octet-stream/i)) {
+if (this.headers['content-type'].match(/octet-stream/i)) {
   this._initOctetStream();
   return;
 }
 
-if (this.headers[&#x27;content-type&#x27;].match(/urlencoded/i)) {
+if (this.headers['content-type'].match(/urlencoded/i)) {
   this.<span class="apidocCodeKeywordSpan">_initUrlencoded</span>();
   return;
 }
 
-if (this.headers[&#x27;content-type&#x27;].match(/multipart/i)) {
-  var m = this.headers[&#x27;content-type&#x27;].match(/boundary=(?:&#x22;([^&#x22;]+)&#x22;|([^;]+))/i);
+if (this.headers['content-type'].match(/multipart/i)) {
+  var m = this.headers['content-type'].match(/boundary=(?:"([^"]+)"|([^;]+))/i);
   if (m) {
     this._initMultipart(m[1] || m[2]);
 ...</pre></li>
@@ -1188,16 +1181,16 @@ if (this.headers[&#x27;content-type&#x27;].match(/multipart/i)) {
     return;
   }
 
-  this.emit(&#x27;end&#x27;);
+  this.emit('end');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
   });
 });
 
-part.on(&#x27;end&#x27;, function() {
+part.on('end', function() {
   file.end(function() {
     self._flushing--;
-    self.emit(&#x27;file&#x27;, part.name, file);
+    self.emit('file', part.name, file);
     self.<span class="apidocCodeKeywordSpan">_maybeEnd</span>();
   });
 });
@@ -1235,14 +1228,14 @@ return {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_parseContentLength = function () {
   this.bytesReceived = 0;
-  if (this.headers[&#x27;content-length&#x27;]) {
-    this.bytesExpected = parseInt(this.headers[&#x27;content-length&#x27;], 10);
-  } else if (this.headers[&#x27;transfer-encoding&#x27;] === undefined) {
+  if (this.headers['content-length']) {
+    this.bytesExpected = parseInt(this.headers['content-length'], 10);
+  } else if (this.headers['transfer-encoding'] === undefined) {
     this.bytesExpected = 0;
   }
 
   if (this.bytesExpected !== null) {
-    this.emit(&#x27;progress&#x27;, this.bytesReceived, this.bytesExpected);
+    this.emit('progress', this.bytesReceived, this.bytesExpected);
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
@@ -1279,37 +1272,37 @@ if (this.error) {
     return;
   }
 
-  if (!this.headers[&#x27;content-type&#x27;]) {
-    this._error(new Error(&#x27;bad content-type header, no content-type&#x27;));
+  if (!this.headers['content-type']) {
+    this._error(new Error('bad content-type header, no content-type'));
     return;
   }
 
-  if (this.headers[&#x27;content-type&#x27;].match(/octet-stream/i)) {
+  if (this.headers['content-type'].match(/octet-stream/i)) {
     this._initOctetStream();
     return;
   }
 
-  if (this.headers[&#x27;content-type&#x27;].match(/urlencoded/i)) {
+  if (this.headers['content-type'].match(/urlencoded/i)) {
     this._initUrlencoded();
     return;
   }
 
-  if (this.headers[&#x27;content-type&#x27;].match(/multipart/i)) {
-    var m = this.headers[&#x27;content-type&#x27;].match(/boundary=(?:&#x22;([^&#x22;]+)&#x22;|([^;]+))/i);
+  if (this.headers['content-type'].match(/multipart/i)) {
+    var m = this.headers['content-type'].match(/boundary=(?:"([^"]+)"|([^;]+))/i);
     if (m) {
       this._initMultipart(m[1] || m[2]);
     } else {
-      this._error(new Error(&#x27;bad content-type header, no multipart boundary&#x27;));
+      this._error(new Error('bad content-type header, no multipart boundary'));
     }
     return;
   }
 
-  if (this.headers[&#x27;content-type&#x27;].match(/json/i)) {
+  if (this.headers['content-type'].match(/json/i)) {
     this._initJSONencoded();
     return;
   }
 
-  this._error(new Error(&#x27;bad content-type header, unknown content-type: &#x27;+this.headers[&#x27;content-type&#x27;]));
+  this._error(new Error('bad content-type header, unknown content-type: '+this.headers['content-type']));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
@@ -1341,11 +1334,11 @@ if (!this._parser) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_uploadPath = function (filename) {
   var buf = crypto.randomBytes(16);
-  var name = &#x27;upload_&#x27; + buf.toString(&#x27;hex&#x27;);
+  var name = 'upload_' + buf.toString('hex');
 
   if (this.keepExtensions) {
     var ext = path.extname(filename);
-    ext     = ext.replace(/(\.[a-z0-9]+).*/i, &#x27;$1&#x27;);
+    ext     = ext.replace(/(\.[a-z0-9]+).*/i, '$1');
 
     name += ext;
   }
@@ -1366,7 +1359,7 @@ var file = new File({
   hash: self.hash
 });
 
-this.emit(&#x27;fileBegin&#x27;, part.name, file);
+this.emit('fileBegin', part.name, file);
 ...</pre></li>
     </ul>
 
@@ -1383,20 +1376,20 @@ this.emit(&#x27;fileBegin&#x27;, part.name, file);
   var self = this;
 
   if (part.filename === undefined) {
-    var value = &#x27;&#x27;
+    var value = ''
       , decoder = new StringDecoder(this.encoding);
 
-    part.on(&#x27;data&#x27;, function(buffer) {
+    part.on('data', function(buffer) {
       self._fieldsSize += buffer.length;
-      if (self._fieldsSize &#x3e; self.maxFieldsSize) {
-        self._error(new Error(&#x27;maxFieldsSize exceeded, received &#x27;+self._fieldsSize+&#x27; bytes of field data&#x27;));
+      if (self._fieldsSize &gt; self.maxFieldsSize) {
+        self._error(new Error('maxFieldsSize exceeded, received '+self._fieldsSize+' bytes of field data'));
         return;
       }
       value += decoder.write(buffer);
     });
 
-    part.on(&#x27;end&#x27;, function() {
-      self.emit(&#x27;field&#x27;, part.name, value);
+    part.on('end', function() {
+      self.emit('field', part.name, value);
     });
     return;
   }
@@ -1410,12 +1403,12 @@ this.emit(&#x27;fileBegin&#x27;, part.name, file);
     hash: self.hash
   });
 
-  this.emit(&#x27;fileBegin&#x27;, part.name, file);
+  this.emit('fileBegin', part.name, file);
 
   file.open();
   this.openedFiles.push(file);
 
-  part.on(&#x27;data&#x27;, function(buffer) {
+  part.on('data', function(buffer) {
     if (buffer.length == 0) {
       return;
     }
@@ -1425,10 +1418,10 @@ this.emit(&#x27;fileBegin&#x27;, part.name, file);
     });
   });
 
-  part.on(&#x27;end&#x27;, function() {
+  part.on('end', function() {
     file.end(function() {
       self._flushing--;
-      self.emit(&#x27;file&#x27;, part.name, file);
+      self.emit('file', part.name, file);
       self._maybeEnd();
     });
   });
@@ -1475,13 +1468,13 @@ form.parse(req, function(err, fields, files) {
 
 form.<span class="apidocCodeKeywordSpan">onPart</span>(part);
 ```
-You may overwrite this method if you are interested in directly accessing the multipart stream. Doing so will disable any `&#x27
-;field&#x27;` / `&#x27;file&#x27;` events  processing which would occur otherwise, making you fully responsible for handling the
+You may overwrite this method if you are interested in directly accessing the multipart stream. Doing so will disable any `'
+;field'` / `'file'` events  processing which would occur otherwise, making you fully responsible for handling the
  processing.
 
 ```javascript
 form.onPart = function(part) {
-part.addListener(&#x27;data&#x27;, function() {
+part.addListener('data', function() {
   // ...
 ...</pre></li>
     </ul>
@@ -1502,7 +1495,7 @@ part.addListener(&#x27;data&#x27;, function() {
     } catch (err) {
       // the stream was destroyed
       if (!this.ended) {
-        // before it was completed, crash &#x26; burn
+        // before it was completed, crash &amp; burn
         this._error(err);
       }
       return false;
@@ -1516,7 +1509,7 @@ part.addListener(&#x27;data&#x27;, function() {
     } catch (err) {
       // the stream was destroyed
       if (!this.ended) {
-        // before it was completed, crash &#x26; burn
+        // before it was completed, crash &amp; burn
         this._error(err);
       }
       return false;
@@ -1525,15 +1518,15 @@ part.addListener(&#x27;data&#x27;, function() {
     return true;
   };
 
-  // Setup callback first, so we don&#x27;t miss anything from data events emitted
+  // Setup callback first, so we don't miss anything from data events emitted
   // immediately.
   if (cb) {
     var fields = {}, files = {};
     this
-      .on(&#x27;field&#x27;, function(name, value) {
+      .on('field', function(name, value) {
         fields[name] = value;
       })
-      .on(&#x27;file&#x27;, function(name, file) {
+      .on('file', function(name, file) {
         if (this.multiples) {
           if (files[name]) {
             if (!Array.isArray(files[name])) {
@@ -1547,10 +1540,10 @@ part.addListener(&#x27;data&#x27;, function() {
           files[name] = file;
         }
       })
-      .on(&#x27;error&#x27;, function(err) {
+      .on('error', function(err) {
         cb(err, fields, files);
       })
-      .on(&#x27;end&#x27;, function() {
+      .on('end', function() {
         cb(null, fields, files);
       });
   }
@@ -1561,17 +1554,17 @@ part.addListener(&#x27;data&#x27;, function() {
   // Start listening for data.
   var self = this;
   req
-    .on(&#x27;error&#x27;, function(err) {
+    .on('error', function(err) {
       self._error(err);
     })
-    .on(&#x27;aborted&#x27;, function() {
-      self.emit(&#x27;aborted&#x27;);
-      self._error(new Error(&#x27;Request aborted&#x27;));
+    .on('aborted', function() {
+      self.emit('aborted');
+      self._error(new Error('Request aborted'));
     })
-    .on(&#x27;data&#x27;, function(buffer) {
+    .on('data', function(buffer) {
       self.write(buffer);
     })
-    .on(&#x27;end&#x27;, function() {
+    .on('end', function() {
       if (self.error) {
         return;
       }
@@ -1585,16 +1578,16 @@ part.addListener(&#x27;data&#x27;, function() {
   return this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  util = require(&#x27;util&#x27;);
+  util = require('util');
 
 http.createServer(function(req, res) {
-if (req.url == &#x27;/upload&#x27; &#x26;&#x26; req.method.toLowerCase() == &#x27;post&#x27;) {
+if (req.url == '/upload' &amp;&amp; req.method.toLowerCase() == 'post') {
   // parse a file upload
   var form = new formidable.IncomingForm();
 
   form.<span class="apidocCodeKeywordSpan">parse</span>(req, function(err, fields, files) {
-    res.writeHead(200, {&#x27;content-type&#x27;: &#x27;text/plain&#x27;});
-    res.write(&#x27;received upload:\n\n&#x27;);
+    res.writeHead(200, {'content-type': 'text/plain'});
+    res.write('received upload:\n\n');
     res.end(util.inspect({fields: fields, files: files}));
   });
 
@@ -1628,7 +1621,7 @@ this.pause = function() {
   } catch (err) {
     // the stream was destroyed
     if (!this.ended) {
-      // before it was completed, crash &#x26; burn
+      // before it was completed, crash &amp; burn
       this._error(err);
     }
     return false;
@@ -1650,22 +1643,22 @@ this.pause = function() {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 ```javascript
-form.on(&#x27;file&#x27;, function(name, file) {
+form.on('file', function(name, file) {
 });
 ```
 
-#### &#x27;error&#x27;
+#### 'error'
 
 Emitted when there is an error processing the incoming form. A request that experiences an error is automatically paused, you will
- have to manually call `request.<span class="apidocCodeKeywordSpan">resume</span>()` if you want the request to continue firing `&#
-x27;data&#x27;` events.
+ have to manually call `request.<span class="apidocCodeKeywordSpan">resume</span>()` if you want the request to continue firing `&amp;#
+x27;data'` events.
 
 ```javascript
-form.on(&#x27;error&#x27;, function(err) {
+form.on('error', function(err) {
 });
 ```
 
-#### &#x27;aborted&#x27;
+#### 'aborted'
 ...</pre></li>
     </ul>
 
@@ -1683,29 +1676,29 @@ form.on(&#x27;error&#x27;, function(err) {
     return;
   }
   if (!this._parser) {
-    this._error(new Error(&#x27;uninitialized parser&#x27;));
+    this._error(new Error('uninitialized parser'));
     return;
   }
 
   this.bytesReceived += buffer.length;
-  this.emit(&#x27;progress&#x27;, this.bytesReceived, this.bytesExpected);
+  this.emit('progress', this.bytesReceived, this.bytesExpected);
 
   var bytesParsed = this._parser.write(buffer);
   if (bytesParsed !== buffer.length) {
-    this._error(new Error(&#x27;parser error, &#x27;+bytesParsed+&#x27; of &#x27;+buffer.length+&#x27; bytes parsed&#x27;));
+    this._error(new Error('parser error, '+bytesParsed+' of '+buffer.length+' bytes parsed'));
   }
 
   return bytesParsed;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 http.createServer(function(req, res) {
-if (req.url == &#x27;/upload&#x27; &#x26;&#x26; req.method.toLowerCase() == &#x27;post&#x27;) {
+if (req.url == '/upload' &amp;&amp; req.method.toLowerCase() == 'post') {
   // parse a file upload
   var form = new formidable.IncomingForm();
 
   form.parse(req, function(err, fields, files) {
-    res.writeHead(200, {&#x27;content-type&#x27;: &#x27;text/plain&#x27;});
-    res.<span class="apidocCodeKeywordSpan">write</span>(&#x27;received upload:\n\n&#x27;);
+    res.writeHead(200, {'content-type': 'text/plain'});
+    res.<span class="apidocCodeKeywordSpan">write</span>('received upload:\n\n');
     res.end(util.inspect({fields: fields, files: files}));
   });
 
@@ -1732,7 +1725,7 @@ if (req.url == &#x27;/upload&#x27; &#x26;&#x26; req.method.toLowerCase() == &#x2
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
     })
-    .on(&#x27;end&#x27;, function() {
+    .on('end', function() {
       cb(null, fields, files);
     });
 }
@@ -1743,7 +1736,7 @@ this.<span class="apidocCodeKeywordSpan">writeHeaders</span>(req.headers);
 // Start listening for data.
 var self = this;
 req
-  .on(&#x27;error&#x27;, function(err) {
+  .on('error', function(err) {
     self._error(err);
   })
 ...</pre></li>
@@ -1779,7 +1772,7 @@ req
     this[key] = properties[key];
   }
 
-  if(typeof this.hash === &#x27;string&#x27;) {
+  if(typeof this.hash === 'string') {
     this.hash = crypto.createHash(properties.hash);
   } else {
     this.hash = null;
@@ -1820,21 +1813,21 @@ req
     <li>description and source-code<pre class="apidocCodePre">end = function (cb) {
   var self = this;
   if (self.hash) {
-    self.hash = self.hash.digest(&#x27;hex&#x27;);
+    self.hash = self.hash.digest('hex');
   }
   this._writeStream.end(function() {
-    self.emit(&#x27;end&#x27;);
+    self.emit('end');
     cb();
   });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-if (req.url == &#x27;/upload&#x27; &#x26;&#x26; req.method.toLowerCase() == &#x27;post&#x27;) {
+if (req.url == '/upload' &amp;&amp; req.method.toLowerCase() == 'post') {
   // parse a file upload
   var form = new formidable.IncomingForm();
 
   form.parse(req, function(err, fields, files) {
-    res.writeHead(200, {&#x27;content-type&#x27;: &#x27;text/plain&#x27;});
-    res.write(&#x27;received upload:\n\n&#x27;);
+    res.writeHead(200, {'content-type': 'text/plain'});
+    res.write('received upload:\n\n');
     res.<span class="apidocCodeKeywordSpan">end</span>(util.inspect({fields: fields, files: files}));
   });
 
@@ -1842,7 +1835,7 @@ if (req.url == &#x27;/upload&#x27; &#x26;&#x26; req.method.toLowerCase() == &#x2
 }
 
 // show a file upload form
-res.writeHead(200, {&#x27;content-type&#x27;: &#x27;text/html&#x27;});
+res.writeHead(200, {'content-type': 'text/html'});
 ...</pre></li>
     </ul>
 
@@ -1864,12 +1857,12 @@ res.writeHead(200, {&#x27;content-type&#x27;: &#x27;text/html&#x27;});
   hash: self.hash
 });
 
-this.emit(&#x27;fileBegin&#x27;, part.name, file);
+this.emit('fileBegin', part.name, file);
 
 file.<span class="apidocCodeKeywordSpan">open</span>();
 this.openedFiles.push(file);
 
-part.on(&#x27;data&#x27;, function(buffer) {
+part.on('data', function(buffer) {
   if (buffer.length == 0) {
     return;
   }
@@ -1897,7 +1890,7 @@ part.on(&#x27;data&#x27;, function(buffer) {
     filename: this.filename,
     mime: this.mime
   };
-  if (this.hash &#x26;&#x26; this.hash != &#x22;&#x22;) {
+  if (this.hash &amp;&amp; this.hash != "") {
     json.hash = this.hash;
   }
   return json;
@@ -1922,19 +1915,19 @@ part.on(&#x27;data&#x27;, function(buffer) {
   this._writeStream.write(buffer, function() {
     self.lastModifiedDate = new Date();
     self.size += buffer.length;
-    self.emit(&#x27;progress&#x27;, self.size);
+    self.emit('progress', self.size);
     cb();
   });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 http.createServer(function(req, res) {
-if (req.url == &#x27;/upload&#x27; &#x26;&#x26; req.method.toLowerCase() == &#x27;post&#x27;) {
+if (req.url == '/upload' &amp;&amp; req.method.toLowerCase() == 'post') {
   // parse a file upload
   var form = new formidable.IncomingForm();
 
   form.parse(req, function(err, fields, files) {
-    res.writeHead(200, {&#x27;content-type&#x27;: &#x27;text/plain&#x27;});
-    res.<span class="apidocCodeKeywordSpan">write</span>(&#x27;received upload:\n\n&#x27;);
+    res.writeHead(200, {'content-type': 'text/plain'});
+    res.<span class="apidocCodeKeywordSpan">write</span>('received upload:\n\n');
     res.end(util.inspect({fields: fields, files: files}));
   });
 
@@ -1971,8 +1964,8 @@ if (req.url == &#x27;/upload&#x27; &#x26;&#x26; req.method.toLowerCase() == &#x2
   this.maxFields = opts.maxFields || 1000;
   this.maxFieldsSize = opts.maxFieldsSize || 2 * 1024 * 1024;
   this.keepExtensions = opts.keepExtensions || false;
-  this.uploadDir = opts.uploadDir || (os.tmpdir &#x26;&#x26; os.tmpdir()) || os.tmpDir();
-  this.encoding = opts.encoding || &#x27;utf-8&#x27;;
+  this.uploadDir = opts.uploadDir || (os.tmpdir &amp;&amp; os.tmpdir()) || os.tmpDir();
+  this.encoding = opts.encoding || 'utf-8';
   this.headers = null;
   this.type = null;
   this.hash = opts.hash || false;
@@ -1989,18 +1982,18 @@ if (req.url == &#x27;/upload&#x27; &#x26;&#x26; req.method.toLowerCase() == &#x2
   return this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-var formidable = require(&#x27;formidable&#x27;),
-http = require(&#x27;http&#x27;),
-util = require(&#x27;util&#x27;);
+var formidable = require('formidable'),
+http = require('http'),
+util = require('util');
 
 http.createServer(function(req, res) {
-  if (req.url == &#x27;/upload&#x27; &#x26;&#x26; req.method.toLowerCase() == &#x27;post&#x27;) {
+  if (req.url == '/upload' &amp;&amp; req.method.toLowerCase() == 'post') {
 // parse a file upload
 var form = new formidable.<span class="apidocCodeKeywordSpan">IncomingForm</span>();
 
 form.parse(req, function(err, fields, files) {
-  res.writeHead(200, {&#x27;content-type&#x27;: &#x27;text/plain&#x27;});
-  res.write(&#x27;received upload:\n\n&#x27;);
+  res.writeHead(200, {'content-type': 'text/plain'});
+  res.write('received upload:\n\n');
   res.end(util.inspect({fields: fields, files: files}));
 });
 ...</pre></li>
@@ -2022,7 +2015,7 @@ form.parse(req, function(err, fields, files) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function JSONParser(parent) {
   this.parent = parent;
-  this.data = new Buffer(&#x27;&#x27;);
+  this.data = new Buffer('');
   this.bytesWritten = 0;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2117,7 +2110,7 @@ form.parse(req, function(err, fields, files) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function QuerystringParser(maxKeys) {
   this.maxKeys = maxKeys;
-  this.buffer = &#x27;&#x27;;
+  this.buffer = '';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2131,3 +2124,4 @@ form.parse(req, function(err, fields, files) {
     ]
 </div>
 </div>
+</body></html>
